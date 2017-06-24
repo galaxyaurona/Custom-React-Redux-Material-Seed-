@@ -11,6 +11,7 @@ import { createStore, applyMiddleware, compose } from "redux"
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import reducers from "./reducers"
+import {promise} from "redux-promise"
 // one way
 //import { AppComponent} from './components';
 //const {App} = AppComponent
@@ -20,10 +21,10 @@ import {App} from "./components/app"
 
 // import middleware here
 const middleware = {
-
+    promise
 }
 
-console.log("apply",applyMiddleware)
+
 
 const store = createStore(reducers, composeWithDevTools(
     applyMiddleware(...middleware),
